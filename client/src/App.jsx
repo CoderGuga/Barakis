@@ -5,6 +5,7 @@ import {BrowserRouter, Routes,Route} from 'react-router-dom'
 import Login from "./Login"
 import Text from "./text"
 import Blog from "./blog"
+import Items from "./items"
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/text" element={<Text/>}></Route>
         <Route path="/blog" element={<Blog/>}></Route>
+        <Route path="/items" element={<Items/>}></Route>
       </Routes>
     </BrowserRouter>
   )
