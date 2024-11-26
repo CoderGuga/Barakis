@@ -1,4 +1,5 @@
 const express = require('express')
+const { authenticateUser } = require('../middlewares/authMiddleware');
 const {
     getText,
     getTextbyID,
@@ -10,11 +11,11 @@ const {
 
 const router = express.Router()
 
-router.get('/:id', getTextbyID)
-router.get('/', getText)
-router.post('/', createText)
-router.delete('/:id', deleteText)
-router.patch('/:id/complete', completeText)
-router.patch('/:id', updateText)
+router.get('/:id', authenticateUser, getTextbyID)
+router.get('/', authenticateUser, getText)
+router.post('/', authenticateUser, createText)
+router.delete('/:id', authenticateUser, deleteText)
+router.patch('/:id/complete', authenticateUser, completeText)
+router.patch('/:id', authenticateUser, updateText)
 
 module.exports = router

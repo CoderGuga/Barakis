@@ -3,7 +3,7 @@ import Signup from "./Signup"
 /*import { useState } from "react"*/
 import {BrowserRouter, Routes,Route} from 'react-router-dom'
 import Login from "./Login"
-import Text from "./text"
+import Tasks from "./text"
 import Blog from "./blog"
 import Items from "./items"
 
@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/register" element={<Signup/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
-        <Route path="/text" element={<Text/>}></Route>
+        <Route path="/tasks" element={<Tasks/>}></Route>
         <Route path="/blog" element={<Blog/>}></Route>
         <Route path="/items" element={<Items/>}></Route>
       </Routes>

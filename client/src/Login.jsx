@@ -4,16 +4,16 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"  
 
 function Login() {
-    const [name, setName] = useState()
+    const [mail, setMail] = useState()
     const [password, setPassword] = useState()
     const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/login', {name, password})
+        axios.post('http://localhost:3001/users/login', {mail, password})
         .then(result => {console.log(result)
             if(result.data === "Success"){
-                navigate('/text')
+                navigate('../tasks')
             }
         })
         .catch (err=> console.log(err)) 
@@ -26,15 +26,15 @@ function Login() {
                 <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email">
-                        <strong>Name</strong>
+                        <strong>Email</strong>
                     </label>
                     <input
                         type="text"
-                        placeholder="Enter Name"
+                        placeholder="Enter Email"
                         autoComplete="off"
-                        name="name"
+                        name="mail"
                         className="form-control rounded-0"
-                        onChange={(e) => setName(e.target.value)}
+                        onChange={(e) => setMail(e.target.value)}
                         />
                     </div>
                     <div className="mb-3">
