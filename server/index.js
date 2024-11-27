@@ -7,7 +7,7 @@ const TextRoutes = require('./routes/textRoutes')
 const dotenv = require('dotenv');
 const userRoutes = require('./routes/userRoutes');
 
-dotenv.config();    
+dotenv.config({path: '../.env'});    
 
 const app = express()
 app.use(express.json())
