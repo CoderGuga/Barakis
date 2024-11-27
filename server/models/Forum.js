@@ -7,19 +7,15 @@ const ForumSchema = new mongoose.Schema({
     },
     description: { 
         type: String, 
-        required: true 
+        required: false 
     },
-    creatorId: { 
+    user:{
+        type: String,
+        required: true
+    },
+    _id: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'Employee', required: true 
-    },
-    text:{
-        type:String,
-        required:true
-    }, 
-    status:{
-        type:Boolean,
-        required:true
     }
 }, { timestamps: true }
 )

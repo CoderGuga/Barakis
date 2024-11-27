@@ -6,15 +6,22 @@ import { useState } from "react"
 function Text() {
     const [title, setTitle] = useState()
     const [description, setDescription] = useState()
-    const [creatorID, setCreatorID] = useState()
-    const [text, setText] = useState()
-    const [status, setStatus] = useState()
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/tasks', {title, description, creatorID, text, status })
-        .then(result => {console.log(result)
-        })
+        const token = sessionStorage.getItem('token');
+        const user = JSON.parse(sessionStorage.getItem('user'));
+        const _id = sessionStorage.getItem('_id');
+        if (token) {
+            axios.post('http://localhost:3001/tasks', {title, description, user, _id}, {headers: {
+                Authorization: `Bearer ${token}`
+            }
+            })
+            .then(result => {console.log(result)
+            })
         .catch (err=> console.log(err)) 
+    } else {
+        console.log("No token found")
+    }
     }
 
     return(
@@ -46,45 +53,6 @@ function Text() {
                         name="description"
                         className="form-control rounded-0"
                         onChange={(e) => setDescription(e.target.value)}
-                        />
-                    </div>
-                    <div className="mb-3">
-                    <label htmlFor="email">
-                        <strong>CreatorID</strong>
-                    </label>
-                    <input
-                        type="text"
-                        placeholder="Enter creatorID"
-                        autoComplete="off"
-                        name="creatorID"
-                        className="form-control rounded-0"
-                        onChange={(e) => setCreatorID(e.target.value)}
-                        />
-                    </div>
-                    <div className="mb-3">
-                    <label htmlFor="email">
-                        <strong>Text</strong>
-                    </label>
-                    <input
-                        type="text"
-                        placeholder="Enter text"
-                        autoComplete="off"
-                        name="text"
-                        className="form-control rounded-0"
-                        onChange={(e) => setText(e.target.value)}
-                        />
-                    </div>
-                    <div className="mb-3">
-                    <label htmlFor="email">
-                        <strong>Status</strong>
-                    </label>
-                    <input
-                        type="text"
-                        placeholder="Enter status"
-                        autoComplete="off"
-                        name="status"
-                        className="form-control rounded-0"
-                        onChange={(e) => setStatus(e.target.value)}
                         />
                     </div>
                     <button type="submit" className="btn btn-success w-100 rounded-0">

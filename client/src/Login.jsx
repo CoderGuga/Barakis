@@ -4,17 +4,20 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"  
 
 function Login() {
-    const [mail, setMail] = useState()
+    const [email, setMail] = useState()
     const [password, setPassword] = useState()
     const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/users/login', {mail, password})
+        axios.post('http://localhost:3001/users/login', {email, password})
         .then(result => {console.log(result)
-            if(result.data === "Success"){
+                if (result.data.token){
+                    sessionStorage.setItem('token', result.data.token)
+                    sessionStorage.setItem('user', JSON.stringify(result.data.user))
+                    sessionStorage.setItem("_id", result.data.user._id)
+                }
                 navigate('../tasks')
-            }
         })
         .catch (err=> console.log(err)) 
     }

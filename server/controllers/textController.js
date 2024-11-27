@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const ForumModel = require('../models/Forum')
+const jwtDecode = require('jwt-decode')
 
 const getText = async (req, res) => {
     const { status } = req.query;
