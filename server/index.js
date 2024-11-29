@@ -7,11 +7,16 @@ const TextRoutes = require('./routes/textRoutes')
 const dotenv = require('dotenv');
 const userRoutes = require('./routes/userRoutes');
 
-dotenv.config({path: '../.env'});    
+dotenv.config();    
 
 const app = express()
 app.use(express.json())
-app.use(cors())
+
+app.use(
+    cors({
+        origin: process.env.CLIENT_URL,
+        credentials: true
+    }))
 
 mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log('MongoDB connected'))
@@ -20,6 +25,6 @@ mongoose.connect(process.env.MONGO_URI)
 app.use('/tasks', TextRoutes)
 app.use('/users', userRoutes);
 
-app.listen(3001, () => {
+app.listen(process.env.PORT, () => {
     console.log('server is running')
 })

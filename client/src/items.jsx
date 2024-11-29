@@ -1,8 +1,5 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import dotenv from 'dotenv';
-
-dotenv.config({path: '../.env'});
 
 const App = () => {
     const [items, setItems] = useState([]);
@@ -11,7 +8,7 @@ const App = () => {
         const fetchItems = async () => {
             const token = sessionStorage.getItem('token');
             try {
-                const response = await axios.get(`http://localhost:3001/tasks`, {
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/tasks`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
