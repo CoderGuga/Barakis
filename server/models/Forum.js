@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose';
 
 const ForumSchema = new mongoose.Schema({
     title: { 
@@ -9,15 +9,16 @@ const ForumSchema = new mongoose.Schema({
         type: String, 
         required: false 
     },
-    user:{
+    user: {
         type: String,
         required: true
     },
     _id: { 
         type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Employee', required: true 
+        ref: 'Employee', 
+        required: true 
     }
-}, { timestamps: true }
-)
+}, { timestamps: true });
 
-module.exports = mongoose.model('Forum', ForumSchema)
+const ForumModel = mongoose.model('Forum', ForumSchema);
+export default ForumModel;

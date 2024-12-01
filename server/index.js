@@ -1,10 +1,10 @@
-const express = require("express")
-const mongoose = require('mongoose')
-const cors = require('cors')
-const TextRoutes = require('./routes/textRoutes')
-const dotenv = require('dotenv');
-const userRoutes = require('./routes/userRoutes');
-const path = require('path');
+import express from 'express'
+import mongoose from 'mongoose'
+import cors from 'cors'
+import TextRoutes from './routes/TextRoutes'
+import dotenv from 'dotenv'
+import userRoutes from './routes/userRoutes';
+import path from 'path';
 
 dotenv.config();    
 

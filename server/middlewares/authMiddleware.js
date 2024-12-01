@@ -1,7 +1,7 @@
-const jwt = require('jsonwebtoken');
-const User = require('../models/Employee');
+import jwt from 'jsonwebtoken';
+import User from '../models/Employee.js';
 
-exports.authenticateUser = async (req, res, next) => {
+export const authenticateUser = async (req, res, next) => {
   const token = req.header('Authorization')?.replace('Bearer ', '');
 
   if (!token) {

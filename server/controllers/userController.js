@@ -1,16 +1,12 @@
-const User = require('../models/Employee');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
-
+import User from '../models/User.js';
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
 
 // Register a new user
-exports.registerUser = async (req, res) => {
+export const registerUser = async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
-    const existingUser = await User.findOne({ email });
-    if (existingUser) return res.status(400).json({ message: 'User already exists' });
-
     const user = new User({ name, email, password });
     await user.save();
 
@@ -22,7 +18,7 @@ exports.registerUser = async (req, res) => {
 };
 
 // Login an existing user
-exports.loginUser = async (req, res) => {
+export const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -40,7 +36,7 @@ exports.loginUser = async (req, res) => {
 };
 
 // Get user profile
-exports.getUserProfile = async (req, res) => {
+export const getUserProfile = async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('-password');
     if (!user) return res.status(404).json({ message: 'User not found' });
