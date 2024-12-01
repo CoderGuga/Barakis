@@ -4,16 +4,18 @@ import cors from 'cors'
 import TextRoutes from './routes/textRoutes.js'
 import dotenv from 'dotenv'
 import userRoutes from './routes/userRoutes.js';
-import path from 'path';
 
 dotenv.config();    
 
 const app = express()
 app.use(express.json())
 
-const __dirname = path.resolve();
-
-app.use(cors())
+app.use(
+    cors({
+        origin: process.env.FRONTEND_URL || "http://localhost:5000", // Adjust for local dev
+        credentials: true,
+    })
+);
 
 mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log('MongoDB connected'))
@@ -21,13 +23,6 @@ mongoose.connect(process.env.MONGO_URI)
 
 app.use('/tasks', TextRoutes)
 app.use('/users', userRoutes);
-
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "../dist/client")));
-    app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, "../client", "dist", "index.html"));
-    });
-}
 
 const PORT = process.env.PORT || 5000
 
