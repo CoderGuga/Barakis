@@ -7,10 +7,11 @@ function Login() {
     const [email, setMail] = useState()
     const [password, setPassword] = useState()
     const navigate = useNavigate()
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post(`${process.env.REACT_APP_API_URL}/users/login`, {email, password})
+        axios.post(`${apiUrl}/users/login`, {email, password})
         .then(result => {console.log(result)
                 if (result.data.token){
                     sessionStorage.setItem('token', result.data.token)

@@ -3,12 +3,13 @@ import { useState, useEffect } from 'react';
 
 const App = () => {
     const [items, setItems] = useState([]);
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
     useEffect(() => {
         const fetchItems = async () => {
             const token = sessionStorage.getItem('token');
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/tasks`, {
+                const response = await axios.get(`${apiUrl}/tasks`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -21,7 +22,7 @@ const App = () => {
         };
 
         fetchItems();
-    }, []);
+    }, [apiUrl]);
 
     return (
         <div>

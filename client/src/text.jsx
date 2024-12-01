@@ -6,13 +6,15 @@ import { useState } from "react"
 function Text() {
     const [title, setTitle] = useState()
     const [description, setDescription] = useState()
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
     const handleSubmit = (e) => {
         e.preventDefault()
         const token = sessionStorage.getItem('token');
         const user = JSON.parse(sessionStorage.getItem('user'));
         const _id = sessionStorage.getItem('_id');
         if (token) {
-            axios.post(`${process.env.REACT_APP_API_URL}/tasks`, {title, description, user, _id}, {headers: {
+            axios.post(`${apiUrl}/tasks`, {title, description, user, _id}, {headers: {
                 Authorization: `Bearer ${token}`
             }
             })
