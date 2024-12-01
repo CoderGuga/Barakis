@@ -6,7 +6,7 @@ import { useState } from "react"
 function Text() {
     const [title, setTitle] = useState()
     const [description, setDescription] = useState()
-    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+    const apiUrl = process.env.VITE_API_URL || 'http://localhost:5000';
 
     const handleSubmit = (e) => {
         e.preventDefault()
