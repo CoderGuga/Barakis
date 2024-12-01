@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
 		"dev": "NODE_ENV=development nodemon server/index.js",
-		"build": "npm install && npm install --prefix client && npm run build --prefix client",
+		"build": "npm install && cd .. && cd client && npm install && npm run build",
 		"start": "NODE_ENV=production node server/index.js"
 	},
   "keywords": [],
