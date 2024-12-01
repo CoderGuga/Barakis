@@ -1,6 +1,6 @@
 import User from '../models/Employee.js';
 import jwt from 'jsonwebtoken';
-import bcrypt from 'bcryptjs';
+import bcrypt from 'bcrypt';
 
 // Register a new user
 export const registerUser = async (req, res) => {
