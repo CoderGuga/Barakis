@@ -12,7 +12,7 @@ app.use(express.json())
 
 app.use(
     cors({
-        origin: process.env.FRONTEND_URL || "http://localhost:5000", // Adjust for local dev
+        origin: process.env.CLIENT_URL || "http://localhost:5000", // Adjust for local dev
         credentials: true,
     })
 );
