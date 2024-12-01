@@ -4,7 +4,6 @@ import Signup from "./Signup"
 import {BrowserRouter, Routes,Route} from 'react-router-dom'
 import Login from "./Login"
 import Tasks from "./text"
-import Blog from "./blog"
 import Items from "./items"
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
         <Route path="/" element={<Signup/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/tasks" element={<Tasks/>}></Route>
-        <Route path="/blog" element={<Blog/>}></Route>
         <Route path="/items" element={<Items/>}></Route>
       </Routes>
     </BrowserRouter>
