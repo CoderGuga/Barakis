@@ -1,9 +1,9 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
-import TextRoutes from './routes/textRoutes'
+import TextRoutes from './routes/textRoutes.js'
 import dotenv from 'dotenv'
-import userRoutes from './routes/userRoutes';
+import userRoutes from './routes/userRoutes.js';
 import path from 'path';
 
 dotenv.config();    
