@@ -57,11 +57,11 @@ body {
   border-radius: 7px;
   cursor: pointer;
   justify-content: flex-end;
-  position: absolute;
   right: 250px ;
   transition: border-color 0.2s;
   border-color: #ba47bc;
-
+  position: absolute;
+  right: 16%;
   /*padding-right: 300px;*/
   /*PAKEIST FONTA*/
 }
@@ -84,8 +84,9 @@ body {
   border-radius: 7px;
   cursor: pointer;
   justify-content: flex-end;
-  position: absolute;
   right: 345px ;
+  position: absolute;
+  right: 10%;
 }
 .buttonS:hover {
   background-color: #ddc9e5; /* New background color when hovered */
@@ -98,7 +99,6 @@ h2{
   text-align: center;
   position: absolute;
   top: 27%; /* Position it vertically in the middle of the screen */
-  left: 49%; /* Position it horizontally in the middle */
   transform: translate(-50%, -50%); /* Offset it to truly center it */
 }
 
@@ -111,7 +111,6 @@ h2{
   border-radius: 20px;
   padding-top: 250px;
   position: absolute;
-  left: 39%; 
   top: -20%;
 }
 
@@ -121,8 +120,7 @@ h2{
   background-color:rgba(70, 68, 68, 0.495);
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  left: 46%;
+  position: relative;
   justify-content:center;
   display: block;
   padding-top: 40px;
@@ -195,9 +193,8 @@ background-color: rgb(122,222,122);
   background-color:rgba(70, 68, 68, 0.495);
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  left: 46%;
-  top:49%;
+  position: relative;
+  top: 9%;
   justify-content:center;
   display: none;
 }
