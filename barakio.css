@@ -6,100 +6,95 @@ body {
   height: 100vh;
   margin: 0;
   font-family:Arial, Helvetica, sans-serif;
-  font-size: 22px;   /*MAYBE REIKES PAKEIST FONTA TEXTO*/
-  background-color: rgb(0, 0, 0);
-  
+  font-size: 22px;
+  background-image: url(Home.png);
 }
 
 .Header {
-  width: 100%;               /* Full width of the screen */
-  height: 100px;               /* Set height for visibility */
-  background-color: #000000;     /* Background color to make it visible */
-  color: rgb(255, 255, 255);               /* Text color for the header */
-  font-size: 25px;
+  width: 100vw;
+  min-width: 370px;
+  height: 14vh;
+  background-color: #030027;
+  color: #Ffffff;
+  font-size: 3vh;
   text-align: left; 
-  padding-left: 200px;
-  display: flex;              /* Flexbox to center content */
-  align-items: center;        /* Center content vertically */
-  justify-content: flex-start;    /* Center content horizontally */
-  position: fixed;            /* Sticks header to the top */
-  top: 0;
-  /*align-items: left;
-  
-  /*margin-bottom: 12px;
-  /*transition: background-color 0.3s;*/
-}
-.Header::after {
-  content: "";                      /* Empty content to create a block */
-  display: block;                   /* Makes the pseudo-element a block */
-  width: 90%;                      /* Full width under the header */
-  height: 2px;                     /* Height of the "colored margin" */
-  background-color:#2c2c2c;      /* Color for the pseudo-element */
-  position: absolute;               /* Positioning relative to the header */
-  bottom: -5px;                    /* Positions it directly below the header */
+  display: flex;
   align-items: center;
-  
-  /*left: 50px;                          /* Aligns it with the left edge */
-  /*right: 50px;*/
-  /*NEPAEINA PADARYT KAD BUTU PER VIDURI*/
-     
-
+  position: fixed;
+  top: 0;
 }
-.buttonL {
-  background-color:#7C05CB;
-  color: white;
-  font-size:Arial, sans-serif;
-  /*padding: 10px 20px;*/
-  font-size: 16px;
-  width: 83px;
-  height: 32px;
-  border: none;
-  border-radius: 7px;
-  cursor: pointer;
+
+.Header h1{
+  margin-left: 3vw;
+  position: relative;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.Header img{
+  width: 9.5vh;
+  height: 7.5vh;
+  float:left;
+}
+
+.buttons{
   justify-content: flex-end;
-  right: 250px ;
-  transition: border-color 0.2s;
-  border-color: #ba47bc;
-  position: absolute;
-  right: 16%;
-  /*padding-right: 300px;*/
-  /*PAKEIST FONTA*/
+  margin-left: auto;
+  margin-right: 3vw;
+  display: inline-block;
 }
-.buttonL:hover {
-  background-color: #9B1DCE; /* New background color when hovered */
-  border-color: #9B1DCE; }
-
 
 .buttonS{
-  background-color:#000000;
-  color: white;
+  background-color: #030027;
+  color: #FFFFFF;
   font-size:Arial, sans-serif;
-  /*padding: 10px 20px;*/
   font-size: 16px;
   width: 83px;
   height: 32px;
   border: 1px;
   border-style: solid;
-  border-color: white;
+  border-color: #FFFFFF;
+  border-radius: 7px;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.buttonL {
+  background-color:#6B4658;
+  color: #FFFFFF;
+  font-size:Arial, sans-serif;
+  font-size: 16px;
+  width: 83px;
+  height: 32px;
+  border: 1px;
   border-radius: 7px;
   cursor: pointer;
   justify-content: flex-end;
-  right: 345px ;
-  position: absolute;
-  right: 10%;
+  transition: border-color 0.2s;
+  border-color: 
+  #6B4658;
+  margin: 2px;
 }
+.buttonL:hover {
+  background-color: #4a343f;
+  border-color: #4a343f; }
+
 .buttonS:hover {
-  background-color: #ddc9e5; /* New background color when hovered */
-  border-color: #8a39a1; }
+  background-color: #231f48;
+  border-color: #231f48;; }
 
 h2{
-  font-size: 80px;
-  font-style: Arial Black;
-  color:rgba(255, 255, 255) ;
+  font-size:calc(50px + 7vmin);
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  color:#FFFFFF;
+  font-weight: 800;
   text-align: center;
   position: absolute;
-  top: 27%; /* Position it vertically in the middle of the screen */
-  transform: translate(-50%, -50%); /* Offset it to truly center it */
+  top: 25vh;
+  transform: translate(-50%, -50%); 
 }
 
 
@@ -109,21 +104,20 @@ h2{
   align-items: center;
   height: 100%;
   border-radius: 20px;
-  padding-top: 250px;
   position: absolute;
-  top: -20%;
+  top: 8vmin;
 }
 
 .login-box {
   width: 270px;
   padding: 10px 30px;
-  background-color:rgba(70, 68, 68, 0.495);
+  background-color: rgba(70, 68, 68, 0.495);
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
   justify-content:center;
   display: block;
-  padding-top: 40px;
+  padding-top: 3vh;
 }
 
 .input-box {
@@ -134,7 +128,7 @@ h2{
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #030027;
   border-radius: 4px;
   outline: none;
   transition: border-color 0.2s;
@@ -143,14 +137,15 @@ h2{
 }
 
 .input-box input:focus {
-  border-color: #7C05CB;
+  border-color: #4a343f;
 }
 
 .login-btn {
   width: 100%;
   padding: 10px;
-  background-color: #7C05CB;
-  color: white;
+  background-color: 
+  #6B4658;
+  color: #FFFFFF;
   border: none;
   border-radius: 4px;
   font-size: 16px;
@@ -159,42 +154,35 @@ h2{
 }
 
 .login-btn:hover {
-  background-color: #9B1DCE;
+  background-color: #4a343f;
 }
 
 #incorrect{
-color: #ff8d76;
+color: #FFFFFF;
 font-size: 16px;
 display:none;
 }
 
-.login{
-font-style: Arial, Helvetica, sans-serif; 
-display: block;
-background-color: rgb(122,222,122);
-}
-
 #forgot-password{
-  color: #ffffff;
+  color: #FFFFFF;
   font-style: Arial Black;
-  
   font-size: 16px;
   cursor: pointer;
 }
 
 #forgot-password:hover{
-  color: #9B1DCE;
+  color: #6B4658;
 }
 
 .signup-box{
   width: 270px;
   padding: 15px 30px;
-  padding-top: 40px;
+  padding-top: 3vh;
+  margin-top: 15vh;
   background-color:rgba(70, 68, 68, 0.495);
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
-  top: 9%;
   justify-content:center;
   display: none;
 }
@@ -210,17 +198,12 @@ background-color: rgb(122,222,122);
   background-color:rgba(70, 68, 68, 0.495);
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  left: 46%;
-  top:49%;
   justify-content:center;
 }
 
 .forgotPA-container h4{
   display: block;
   position: fixed;
-  top:39%;
-  left: 43%;
   margin-bottom: 0;
   font-size: 20px;
   color: #ffffff;
@@ -228,10 +211,3 @@ background-color: rgb(122,222,122);
   text-align: center;
   justify-content:center;
 }
-
-  /*button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }*/
-  
