@@ -1,19 +1,28 @@
 import axios from 'axios';
-import { useState } from "react"
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const App = () => {
     const [items, setItems] = useState([]);
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
     useEffect(() => {
-        axios.get('http://localhost:3001/items')
-            .then(response => {
+        const fetchItems = async () => {
+            const token = sessionStorage.getItem('token');
+            try {
+                const response = await axios.get(`${apiUrl}/tasks`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
                 setItems(response.data);
-            })
-            .catch(error => {
+                console.log(response.data);
+            } catch (error) {
                 console.error('Error fetching data:', error);
-            });
-    }, []);
+            }
+        };
+
+        fetchItems();
+    }, [apiUrl]);
 
     return (
         <div>

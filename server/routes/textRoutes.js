@@ -1,20 +1,21 @@
-const express = require('express')
-const {
+import express from 'express';
+import { authenticateUser } from '../middlewares/authMiddleware.js';
+import {
     getText,
     getTextbyID,
     createText,
     deleteText,
     updateText,
     completeText
-} = require('../controllers/textController')
+} from '../controllers/textController.js';
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/:id', getTextbyID)
-router.get('/', getText)
-router.post('/', createText)
-router.delete('/:id', deleteText)
-router.patch('/:id/complete', completeText)
-router.patch('/:id', updateText)
+router.get('/:id', authenticateUser, getTextbyID);
+router.get('/', authenticateUser, getText);
+router.post('/', authenticateUser, createText);
+router.delete('/:id', authenticateUser, deleteText);
+router.patch('/:id/complete', authenticateUser, completeText);
+router.patch('/:id', authenticateUser, updateText);
 
-module.exports = router
+export default router;

@@ -4,17 +4,21 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"  
 
 function Login() {
-    const [name, setName] = useState()
+    const [email, setMail] = useState()
     const [password, setPassword] = useState()
     const navigate = useNavigate()
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/login', {name, password})
+        axios.post(`${apiUrl}/users/login`, {email, password})
         .then(result => {console.log(result)
-            if(result.data === "Success"){
-                navigate('/text')
-            }
+                if (result.data.token){
+                    sessionStorage.setItem('token', result.data.token)
+                    sessionStorage.setItem('user', JSON.stringify(result.data.user))
+                    sessionStorage.setItem("_id", result.data.user._id)
+                }
+                navigate('../tasks')
         })
         .catch (err=> console.log(err)) 
     }
@@ -26,15 +30,15 @@ function Login() {
                 <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email">
-                        <strong>Name</strong>
+                        <strong>Email</strong>
                     </label>
                     <input
                         type="text"
-                        placeholder="Enter Name"
+                        placeholder="Enter Email"
                         autoComplete="off"
-                        name="name"
+                        name="mail"
                         className="form-control rounded-0"
-                        onChange={(e) => setName(e.target.value)}
+                        onChange={(e) => setMail(e.target.value)}
                         />
                     </div>
                     <div className="mb-3">

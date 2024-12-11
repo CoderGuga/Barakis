@@ -1,66 +1,31 @@
-const express = require("express")
-const mongoose = require('mongoose')
-const cors = require('cors')
-const EmployeeModel = require('./models/Employee')
-const ForumModel = require('./models/Forum')
-const TextRoutes = require('./routes/textRoutes')
+import express from 'express'
+import mongoose from 'mongoose'
+import cors from 'cors'
+import TextRoutes from './routes/textRoutes.js'
+import dotenv from 'dotenv'
+import userRoutes from './routes/userRoutes.js';
+
+dotenv.config();    
 
 const app = express()
 app.use(express.json())
-app.use(cors())
 
-mongoose.connect('mongodb://127.0.0.1:27017/employee')
-
-app.post('/login', (req, res) => {
-    const {name, password} = req.body
-    EmployeeModel.findOne({name:name})
-    .then(user => {
-        if(user){
-        if(user.password === password) {
-            res.json('Success')
-        }
-        else{
-            res.json('the password is incorrect')
-        }
-    }
-    else {
-        res.json('No such user')
-    }
+app.use(
+    cors({
+        origin: process.env.CLIENT_URL || "http://localhost:5000", // Adjust for local dev
+        credentials: true,
     })
-})
+);
 
-app.post('/register', (req, res) => {
-    EmployeeModel.create(req.body)
-    .then(employees => res.json(employees))
-    .catch(err => res.json(err))
-})
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log('MongoDB connected'))
+.catch((err) => console.error(err));
 
-app.use('/text', TextRoutes)
+app.use('/tasks', TextRoutes)
+app.use('/users', userRoutes);
 
+const PORT = process.env.PORT || 5000
 
-app.get('/items', async (req, res) => {
-  const { status } = req.query;
-
-  const query = status ? { status } : {};
-
-  try{
-      const messages = await ForumModel.find(query).sort({createdAt: -1})
-
-      res.status(200).json(messages)
-  }
-  catch (error) {
-      res.status(500).json({ error: error.message });
-  }
-})
-
-
-
-
-
-
-
-
-
-app.listen(3001, () => {
-    console.log('server is running')
+app.listen(PORT, () => {
+    console.log(`server is running on port ${PORT}`)
 })
