@@ -1,0 +1,384 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 22px;
+  background-color: #151e3f;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+
+.Header_fixed {
+  width: 100vw;
+  min-width: 370px;
+  height: 21vh;
+  color: #Ffffff;
+  font-size: 3vh;
+  text-align: left;
+  display: inline-block;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 50; 
+}
+
+.Header1 {
+  width: 100vw;
+  min-width: 370px;
+  height: 14vh;
+  background-color: #030027;
+  color: #Ffffff;
+  font-size: 3vmin;
+  text-align: left;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  top: 0;
+  z-index: 3;
+}
+
+.Header2 {
+  width: 100vw;
+  min-width: 370px;
+  height: 8vh;
+  background-color: #6B4658;
+  color: #Ffffff;
+  font-size: 2.7vh;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.Header2 h1 {
+  margin: 0;
+  font-size: 14px;
+  color: white;
+}
+
+.Header1 h1 {
+  margin-left: 2.5vw;
+  position: relative;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 3px;
+}
+
+#logo{
+  width: 9vmin;
+  height: 7vmin;
+}
+
+.buttons {
+  justify-content: center;
+  margin-left: auto;
+  margin-right: 3vw;
+  padding-left: 2vw;
+  display: inline-block;
+}
+
+.Profile {
+  background-image: url('profiline.png');
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  height: 6vmin;
+  width: 6vmin;
+  border-radius: 50%;
+  background-size: cover;
+  margin: 1vmin;
+}
+
+.Notif {
+  background-image: url('bell.png');
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  height: 5vmin;
+  width: 5vmin;
+  margin: 1vmin;
+}
+
+h5 {
+  border-radius: 4px;
+  background-color: #00000000;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  padding: 20px;
+  width: 220px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+h5 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+h5 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+h5:hover span {
+  padding-right: 25px;
+  letter-spacing: 5px;
+
+}
+
+h5:hover span:after {
+  opacity: 1;
+  right: 0;
+
+}
+
+.buttonBAR {
+  position: absolute;
+  font-family: "Quicksand", sans-serif;
+  font-size: 3vmin;
+  position:sticky;
+  z-index: 20;
+  margin: auto;
+  padding-left:30vw;
+  width: 20vw;
+  display:inline-block;
+}
+
+.buttonBAR select {
+  display: none;
+}
+
+.select-selected {
+  background-color: #1741da00;
+  border-radius: 7px;
+  width: 25vw;
+}
+
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+.select-items div,
+.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(255, 255, 255, 0) transparent;
+  cursor: pointer;
+
+}
+
+.select-items {
+  position: absolute;
+  background-color: #03002795;
+  top: 100%;
+  z-index: 99;
+  width: 19vw;
+  font-size: 2vmin;
+  border-radius: 7px;
+  z-index: 50;
+}
+
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.uploadas {
+  background-color: transparent;
+  border: none;
+  bottom: 20%;
+  position: absolute;
+  height: 70px;
+  width: 70x;
+}
+
+.Notif {
+  background-color: transparent;
+  border: none;
+}
+
+.Profile {
+  background-color: transparent;
+  border: none;
+}
+
+h5 {
+  display: inline-block;
+  margin: 0 2px;
+}
+
+#plus {
+  height: 90px;
+  border-radius: 50%;
+  width: 90px;
+  bottom: 60px;
+  right: 90px;
+  position: fixed;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  z-index: 900;
+}
+
+#plus:hover {
+  transform: scale(1.09);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.scroll{
+  width: 93%;
+  height:80%;
+  justify-content: center;
+  align-items: top;
+  position: fixed;
+  overflow-y: scroll;
+  top: 250px;
+  background-color: rgba(3, 0, 39, 0.5);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.template {
+  width: 91%;
+  background-color: rgba(3, 0, 39, 0.904);
+  border-radius: 20px;
+  margin: 15px;
+  padding: 15px;
+  display: inline-block;
+}
+
+#pfp{
+  width: 40px;
+  height: 40px;
+  display: inline;
+}
+
+#user{
+  display: inline;
+  margin: 10px;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+#userid{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: 0 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+
+.text {
+  background-color: white;
+  width: 90%;
+  height: 70%;
+  border-radius: 7px;
+  display: inline-block;
+  padding: 10px;
+  min-height: 75px;
+}
+
+
+#interactions {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: top;
+  justify-content: center;
+  height: 90px;
+}
+
+#postas{
+  display: flex;
+  align-items: top;
+}
+
+#liked, #comment {
+  background-color: transparent; 
+  border: none;
+  margin: 10px;
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#liked{
+  background-image: url('heart.png');
+}
+
+#comment{
+  background-image: url('comment.png');
+}
+
+#uzpildas{
+  height: 50px;
+  width: 100%
+}
+
+#empty{
+  margin: auto;
+  color: white;
+  position: fixed;
+  display: block;
+}
+
+#nera{
+  display: flex;
+  height: 40vmin;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
