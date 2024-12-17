@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barakis</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Michroma&family=Numans&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="upload.css">
+</head>
+
+<body>
+    <div class="form-popup" id="myForm">
+        <form action="#" method="POST" class="form-container">
+            <div class="upload">
+                <h2 class="uploadh2">Upload to</h2>
+                <div class="buttonBAR">
+                    <select>
+                        <option value="0">Choose a category:</option>
+                        <option value="1">tasks</option>
+                        <option value="2">carpool</option>
+                        <option value="3">sell & buy</option>
+                    </select>
+                </div>
+                <button type="button" class="btn" onclick="closeForm()"></button>
+            </div>
+            <div class="uploadBOX">
+                <div class="inputai">
+                    <input type="text" id="title" placeholder="Title"></input>
+                    <textarea id="des" placeholder="Description"></textarea>
+                </div>
+            </div>
+            <button class="buttonUPLOAD" id="buUPL">Upload</button>
+        </form>
+    </div>
+    <script src="upload.js"></script>
+</body>
+
+</html>

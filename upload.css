@@ -1,0 +1,202 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    font-family: "Quicksand", sans-serif;
+    color: white;
+    font-optical-sizing: auto;
+    background-color: #151e3f;
+}
+
+.form-popup {
+    display: flex;
+    width: 60vmin;
+    height: 50vmin;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background-color: #030027;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+}
+
+.uploadh2 {
+    font-family: "Quicksand", sans-serif;
+    font-size: 2.8vmin;
+    font-weight: bold;
+}
+
+.upload {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 2vw;
+}
+
+.uploadBOX {
+    display: block;
+    flex-direction: column;
+    align-items: top;
+    justify-content: left;
+    width: 90%;
+    padding: 13px;
+    padding-bottom: 10%;
+    border-radius: 7px;
+    font-family: "Quicksand", sans-serif;
+    color: white;
+    font-optical-sizing: auto;
+    font-size: 22px;
+    background-color: #b8a3b319;
+}
+
+.form-container input {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border: transparent;
+    margin-bottom: 2.5vh;
+}
+
+.form-container .btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 4vmin;
+    height: 4vmin;
+    background-image: url(exit1.png);
+    background-size: cover;
+    background-position: center;
+    margin-right: 2vw;
+}
+
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
+.inputai {
+    margin-top: 5%;
+    margin-bottom: auto;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #888;
+    font-family: "Quicksand", sans-serif;
+}
+
+input,
+textarea {
+    color: #000000;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 800;
+    width: 90%;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+textarea {
+    height: 15vmin;
+    overflow-wrap: break-word;
+    resize: vertical;
+    max-height: 20vmin;
+}
+
+#buUPL {
+    border-radius: 7px;
+    background-color: #6B4658;
+    border: #6B4658;
+    font-family: "Quicksand", sans-serif;
+    color: white;
+    font-weight: 900;
+    font-size: 2vmin;
+    width: 10vmin;
+    height: 5vmin;
+    align-items: center;
+    justify-content: center;
+    z-index: 89;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: 24vw;
+    margin-right: auto;
+}
+
+#buUPL:hover {
+    transform: scale(1.09);
+    transition: 0.3s;
+    background-color: rgb(228, 218, 230);
+    cursor: pointer;
+}
+
+.buttonBAR {
+    font-family: "Quicksand", sans-serif;
+    font-size: 2.6vmin;
+    position: sticky;
+    z-index: 20;
+    margin: auto;
+    margin-left: 5px;
+    width: 52%;
+    display: inline-block;
+}
+
+.buttonBAR select {
+    display: none;
+}
+
+.select-selected {
+    background-color: #b8a3b319;
+    border-radius: 7px;
+
+}
+
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}
+
+.select-items div,
+.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(255, 255, 255, 0) transparent;
+    cursor: pointer;
+
+}
+
+.select-items {
+    position: absolute;
+    background-color: #03002795;
+    top: 100%;
+    z-index: 99;
+    width: 19vw;
+    font-size: 2.6vmin;
+    border-radius: 7px;
+    z-index: 50;
+}
+
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
