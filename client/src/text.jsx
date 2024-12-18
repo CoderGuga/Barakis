@@ -12,7 +12,7 @@ function Text() {
         const user = JSON.parse(sessionStorage.getItem('user'));
         const _id = sessionStorage.getItem('_id');
         if (token) {
-            axios.post(`${process.env.REACT_APP_API_URL}/tasks`, {title, description, user, _id}, {headers: {
+            axios.post(`http://localhost:3001/tasks`, {title, description, user, _id}, {headers: {
                 Authorization: `Bearer ${token}`
             }
             })
