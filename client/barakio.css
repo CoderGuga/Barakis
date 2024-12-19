@@ -1,0 +1,342 @@
+/* General body styling */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  background-color: #0d1117; /* GitHub dark background */
+  color: #c9d1d9; /* Light gray text */
+}
+
+/* Header Section */
+.Header {
+  width: 100%;
+  height: 60px;
+  background-color: #161b22; /* Darker header background */
+  color: #f0f6fc; /* Light header text */
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid #21262d; /* Subtle border */
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.Header h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.Header img {
+  height: 32px;
+  margin-right: 10px;
+}
+
+.buttons {
+  margin-left: auto;
+  display: flex;
+}
+
+.buttonS,
+.buttonL {
+  background-color: #238636; /* GitHub green button */
+  color: #f0f6fc;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  border-radius: 6px;
+  padding: 5px 12px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.buttonS:hover,
+.buttonL:hover {
+  background-color: #2ea043; /* Brighter green on hover */
+  border-color: #2ea043;
+}
+
+/* Page Titles */
+h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #f0f6fc;
+  text-align: center;
+  margin: 80px 0 20px;
+}
+
+/* Container for Forms */
+.signup-box,
+.forgotPA-box,
+.login-box,
+.feed-container {
+  width: 360px;
+  padding: 16px;
+  background-color: #161b22; /* Dark gray background */
+  border: 1px solid #30363d; /* Slightly lighter border */
+  border-radius: 6px;
+  margin: 20px auto;
+  text-align: left;
+  box-shadow: 0 1px 3px rgba(27, 31, 35, 0.1);
+}
+
+.feed-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #0d1117; /* Matching background */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Styles */
+.input-box {
+  margin-bottom: 15px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  background-color: #0d1117; /* Input background */
+  color: #f0f6fc; /* Input text color */
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.input-box input:focus {
+  border-color: #58a6ff; /* GitHub blue */
+  outline: none;
+  background-color: #161b22;
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #238636; /* GitHub green */
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.login-btn:hover {
+  background-color: #2ea043;
+}
+
+/* Forgot Password Link */
+#forgot-password {
+  color: #58a6ff; /* GitHub link blue */
+  font-size: 14px;
+  text-decoration: none;
+}
+
+#forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Feed container and general styles */
+.feed-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #3d5a80;
+  margin-bottom: 20px;
+}
+
+.no-posts-message {
+  text-align: center;
+  color: #98c1d9;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Post grid container */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Individual post card */
+.post-card {
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.post-title {
+  font-size: 1.5rem;
+  color: #3d5a80;
+  margin-bottom: 10px;
+}
+
+.post-description {
+  font-size: 1rem;
+  color: #293241;
+  margin-bottom: 15px;
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  color: #98c1d9;
+  font-style: italic;
+  text-align: right;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .feed-title {
+    font-size: 2rem;
+  }
+
+  .post-card {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feed-title {
+    font-size: 1.8rem;
+  }
+
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #0d1117; /* GitHub dark mode */
+  color: #c9d1d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Main Container */
+.github-container {
+  width: 400px;
+  background-color: #161b22; /* Slightly lighter than background */
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.github-title {
+  text-align: center;
+  color: #f0f6fc; /* GitHub header color */
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Input Groups */
+.github-input-group {
+  margin-bottom: 15px;
+}
+
+.github-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #f0f6fc;
+  font-weight: 500;
+}
+
+.github-input,
+.github-textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  background-color: #0d1117; /* Input background */
+  color: #f0f6fc;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  transition: border-color 0.2s ease;
+}
+
+.github-input:focus,
+.github-textarea:focus {
+  outline: none;
+  border-color: #58a6ff; /* GitHub blue on focus */
+}
+
+/* Textarea Styling */
+.github-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Button Styling */
+.github-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #238636; /* GitHub green button */
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.github-button:hover {
+  background-color: #2ea043; /* Slightly brighter green */
+}
+
+/* Floating Button */
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #238636; /* GitHub green */
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease;
+}
+
+.floating-button:hover {
+  transform: scale(1.1);
+  background-color: #2ea043;
+}
+
+.floating-button-icon {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Makes image white for dark background */
+}
