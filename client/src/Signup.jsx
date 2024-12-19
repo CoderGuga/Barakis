@@ -1,79 +1,82 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from 'axios'
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "/barakio.css";
 
 function Signup() {
-    const [name, setName] = useState()
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
-    const navigate = useNavigate()
-    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
+  const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        axios.post(`${apiUrl}/users/register`, {name,email, password})
-        .then(result => {console.log(result)
-        navigate('/login')
-        })
-        .catch (err=> console.log(err)) 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      console.error("Passwords do not match");
+      return;
     }
+    axios
+      .post(`${apiUrl}/users/register`, { name, email, password })
+      .then(() => navigate("/login"))
+      .catch((err) => console.error("Error:", err));
+  };
 
-    return(
-        <div className="d-flex justify-content-center allign-items-center bg-secondary vh-100">
-            <div className="bg-white p-3 rounded w-25">
-                <h2>Register</h2>
-                <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                    <label htmlFor="email">
-                        <strong>Name</strong>
-                    </label>
-                    <input
-                        type="text"
-                        placeholder="Enter Name"
-                        autoComplete="off"
-                        name="name"
-                        className="form-control rounded-0"
-                        onChange={(e) => setName(e.target.value)}
-                        />
-                    </div>
-                    <div className="mb-3">
-                    <label htmlFor="email">
-                        <strong>Email</strong>
-                    </label>
-                    <input
-                        type="email"
-                        placeholder="Enter Email"
-                        autoComplete="off"
-                        name="email"
-                        className="form-control rounded-0"
-                        onChange={(e) => setEmail(e.target.value)}
-                        />
-                    </div>
-                    <div className="mb-3">
-                    <label htmlFor="email">
-                        <strong>Password</strong>
-                    </label>
-                    <input
-                        type="password"
-                        placeholder="Enter Password"
-                        autoComplete="off"
-                        name="password"
-                        className="form-control rounded-0"
-                        onChange={(e) => setPassword(e.target.value)}
-                        />
-                    </div>
-                    <button type="submit" className="btn btn-success w-100 rounded-0">
-                        Register
-                    </button>
-                </form>
-                <Link to="/login" className="btn btn-default border w-100 bg-light rounded-0">
-                    Login
-                </Link>
-            </div>
+  return (
+    <div className="signup-box">
+        <h1>SIGN UP</h1>
+      <form onSubmit={handleSubmit}>
+        <div className="input-box">
+          <input
+            type="text"
+            placeholder="Full Name"
+            required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
         </div>
-
-    );
+        <div className="input-box">
+          <input
+            type="email"
+            placeholder="Email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div className="input-box">
+          <input
+            type="password"
+            placeholder="Password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div className="input-box">
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            required
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+        </div>
+        <div className="input-box">
+          <button type="submit" className="login-btn">
+            Sign Up
+          </button>
+        </div>
+      </form>
+      <div style={{ textAlign: "center", marginTop: "10px" }}>
+        <Link to="/login" id="forgot-password">
+          Already have an account? Login
+        </Link>
+      </div>
+    </div>
+  );
 }
 
 export default Signup;
