@@ -4,25 +4,34 @@ import './barakio.css';
 
 const App = () => {
     const [items, setItems] = useState([]);
+    const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
-    useEffect(() => {
-        const fetchItems = async () => {
-            const token = sessionStorage.getItem('token');
-            try {
-                const response = await axios.get(`http://localhost:5000/tasks`, {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                });
-                setItems(response.data);
-                console.log(response.data);
-            } catch (error) {
-                console.error('Error fetching data:', error);
+        useEffect(() => {
+            const token = sessionStorage.getItem("token");
+            if (token)
+            {
+                const fetchItems = async () => {
+                    try {
+                        const response = await axios.get(`${apiUrl}/items`, {
+                            headers: {
+                                Authorization: `Bearer ${token}`,
+                            },
+                        });
+                        setItems(response.data);
+                        console.log(response.data);
+                    } catch (error) {
+                        console.error('Error fetching data:', error);
+                    }
+                };
+
+                fetchItems();
             }
-        };
+            else
+            {
+            console.log('missing token');
+            }
+        }, [apiUrl]);
 
-        fetchItems();
-    }, []);
     const navigateToTasks = () => {
         window.location.href = '/tasks';
     }
