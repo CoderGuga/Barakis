@@ -12,11 +12,6 @@ const ForumSchema = new mongoose.Schema({
     user: {
         type: String,
         required: true
-    },
-    _id: { 
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Employee', 
-        required: false 
     }
 }, { timestamps: true });
 
