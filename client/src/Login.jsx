@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "/barakio.css"; // Ensure this matches the Signup's styling
+import "./barakio.css"; // Ensure this matches the Signup's styling
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -58,7 +58,7 @@ function Login() {
       </form>
       <div style={{ textAlign: "center", marginTop: "10px" }}>
         <a href="/register" id="forgot-password">
-          Don't have an account? Sign Up
+          Do not have an account? Sign Up
         </a>
       </div>
     </div>

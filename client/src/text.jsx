@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import "/barakio.css"; // Ensure the CSS file is linked
+import "./barakio.css"; // Ensure the CSS file is linked
 
 function Text() {
   const [title, setTitle] = useState("");

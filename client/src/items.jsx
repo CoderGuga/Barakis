@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import '/barakio.css';
+import './barakio.css';
 
 const App = () => {
     const [items, setItems] = useState([]);
