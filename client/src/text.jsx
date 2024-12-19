@@ -23,7 +23,7 @@ function Text() {
           }
         )
         .then((result) => console.log(result))
-        .catch((err) => console.error("Error:", err));
+        .catch((err) => console.error("Error:", err.response ? err.response.data : err.message));
     } else {
       console.log("No token found");
     }

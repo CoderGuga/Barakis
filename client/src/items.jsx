@@ -19,8 +19,8 @@ const App = () => {
                         });
                         setItems(response.data);
                         console.log(response.data);
-                    } catch (error) {
-                        console.error('Error fetching data:', error);
+                    } catch (err) {
+                        console.error("Error:", err.response ? err.response.data : err.message);
                     }
                 };
 
