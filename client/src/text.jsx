@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import "./barakio.css"; // Ensure the CSS file is linked
+import { v4 as uuidv4 } from 'uuid';
 
 function Text() {
   const [title, setTitle] = useState("");
@@ -11,12 +12,13 @@ function Text() {
     e.preventDefault();
     const token = sessionStorage.getItem("token");
     const user = JSON.parse(sessionStorage.getItem("user"));
+    const _id = uuidv4();
 
     if (token) {
       axios
         .post(
           `${apiUrl}/tasks`,
-          { title, description, user},
+          { title, description, user, _id},
           {
             headers: { Authorization: `Bearer ${token}` },
           }
