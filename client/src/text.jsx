@@ -11,13 +11,12 @@ function Text() {
     e.preventDefault();
     const token = sessionStorage.getItem("token");
     const user = JSON.parse(sessionStorage.getItem("user"));
-    const _id = sessionStorage.getItem("_id");
 
     if (token) {
       axios
         .post(
           `${apiUrl}/tasks`,
-          { title, description, user, _id },
+          { title, description, user},
           {
             headers: { Authorization: `Bearer ${token}` },
           }
