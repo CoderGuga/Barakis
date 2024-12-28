@@ -1,27 +1,5 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-<<<<<<< Updated upstream
-import '../barakio.css';
-
-const App = () => {
-    const [items, setItems] = useState([]);
-
-    useEffect(() => {
-        const fetchItems = async () => {
-            const token = sessionStorage.getItem('token');
-            try {
-                const response = await axios.get(`http://localhost:5000/tasks`, {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                });
-                setItems(response.data);
-                console.log(response.data);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-=======
 import { useLocation } from 'react-router-dom';
 import './barakio.css';
 
@@ -41,7 +19,7 @@ const App = () => {
             document.body.classList.remove('custom-body-style');
         };
     }, [location]);
-       /* useEffect(() => {
+        useEffect(() => {
             const token = sessionStorage.getItem("token");
             if (token)
             {
@@ -65,12 +43,12 @@ const App = () => {
             {
             console.log('missing token');
             }
-        }, [apiUrl]);*/
+        }, [apiUrl]);
 
         //data mocking
-        useEffect(() => {
+        //useEffect(() => {
             // Mock data to simulate backend response
-            const mockItems = [
+        /*    const mockItems = [
                 { _id: "1", title: "First Post", description: "This is the description of the first post." },
                 { _id: "2", title: "Second Post", description: "Here's some content fsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssorbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb the second post." },
                 { _id: "3", title: "Third Post", description: "Another example of a post description." },
@@ -90,11 +68,10 @@ const App = () => {
     
             setItems(mockItems);
         }, []); // Empty dependency array ensures this runs once
-
->>>>>>> Stashed changes
-
+        
         fetchItems();
     }, []);
+    */
     const navigateToTasks = () => {
         window.location.href = '/tasks';
     }
