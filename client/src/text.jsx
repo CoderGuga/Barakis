@@ -22,16 +22,32 @@ function Text() {
             headers: { Authorization: `Bearer ${token}` },
           }
         )
+<<<<<<< Updated upstream
         .then((result) => console.log(result))
         .catch((err) => console.error("Error:", err));
+=======
+        .then((result) => {
+          console.log(result);
+          // Redirect to /items on success
+          window.location.href = "/items";
+        })
+        .catch((err) => {
+          console.error("Error:", err.response ? err.response.data : err.message);
+        });
+>>>>>>> Stashed changes
     } else {
       console.log("No token found");
     }
   };
-
+  const navigateToTasks = () => {
+    window.location.href = '/items';
+  }
   return (
     <div className="github-container">
       <h1 className="github-title">Create Task</h1>
+      <button className="floating-button" onClick={navigateToTasks}>
+                <img src="close.png" alt="Close" className="floating-button-icon" />
+            </button>
       <form onSubmit={handleSubmit} className="github-form">
         <div className="github-input-group">
           <label htmlFor="title" className="github-label">Title</label>

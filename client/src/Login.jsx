@@ -19,7 +19,7 @@ function Login() {
           sessionStorage.setItem("token", result.data.token);
           sessionStorage.setItem("user", JSON.stringify(result.data.user));
           sessionStorage.setItem("_id", result.data.user._id);
-          navigate("../tasks");
+          navigate("../items");
         }
       })
       .catch((err) => {
