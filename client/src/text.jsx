@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
 import "./barakio.css"; // Ensure the CSS file is linked
+import { useNavigate } from "react-router-dom";
 
 function Text() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,12 +23,20 @@ function Text() {
             headers: { Authorization: `Bearer ${token}` },
           }
         )
-        .then((result) => console.log(result))
+        .then((result) => {
+          console.log(result);
+          navigate("../items");
+        })
         .catch((err) => console.error("Error:", err.response ? err.response.data : err.message));
     } else {
       console.log("No token found");
     }
   };
+
+
+  const navigateToTasks = () => {
+    window.location.href = '/items';
+  }
 
   return (
     <div className="github-container">
@@ -58,6 +68,9 @@ function Text() {
         <button type="submit" className="github-button">
           Send
         </button>
+        <button className="floating-button" onClick={navigateToTasks}>
+                <img src="home.png" alt="Add Task" className="floating-button-icon" />
+            </button>
       </form>
     </div>
   );

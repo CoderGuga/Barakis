@@ -8,6 +8,6 @@ const router = express.Router();
 router.post('/register', registerUser); 
 router.post('/login', loginUser); 
 // Protected route
-router.get('/me', authenticateUser, getUserProfile);
+router.get('/:id', authenticateUser, getUserProfile);
 
 export default router;

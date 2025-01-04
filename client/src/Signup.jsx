@@ -9,6 +9,7 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
@@ -16,12 +17,16 @@ function Signup() {
     e.preventDefault();
     if (password !== confirmPassword) {
       console.error("Passwords do not match");
+      setErrorMessage("Passwords do not match");
       return;
     }
     axios
       .post(`${apiUrl}/users/register`, { name, email, password })
       .then(() => navigate("/login"))
-      .catch((err) => console.error("Error:", err));
+      .catch((err) => {
+        console.error("Error:", err);
+        setErrorMessage(err.response.data.message);
+      });
   };
 
   return (
@@ -64,6 +69,7 @@ function Signup() {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
+        <p className="error-message">{errorMessage}</p>
         <div className="input-box">
           <button type="submit" className="login-btn">
             Sign Up

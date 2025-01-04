@@ -17,7 +17,7 @@ function Login() {
       .then((result) => {
         if (result.data.token) {
           sessionStorage.setItem("token", result.data.token);
-          sessionStorage.setItem("user", JSON.stringify(result.data.user));
+          //sessionStorage.setItem("user", JSON.stringify(result.data.user));
           sessionStorage.setItem("_id", result.data.user._id);
           navigate("../tasks");
         }

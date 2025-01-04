@@ -37,12 +37,20 @@ export const getTextbyID = async (req, res) => {
 
 export const createText = async (req, res) => {
     try {
-        const forum = await ForumModel.create(req.body);
-        res.status(201).json(forum);
+      const { title, description } = req.body;
+  
+      const forum = await ForumModel.create({
+        title,
+        description,
+        user: req.id,
+        userName: req.username // Include the username in the new document
+      });
+  
+      res.status(201).json(forum);
     } catch (error) {
-        res.status(500).json({ error: error.message });
+      res.status(500).json({ error: error.message });
     }
-};
+  };
 
 export const deleteText = async (req, res) => {
     const { id } = req.params;

@@ -12,6 +12,8 @@ export const authenticateUser = async (req, res, next) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = await User.findById(decoded.id).select('-password');
     if (!req.user) throw new Error();
+    req.username = decoded.username;
+    req.id = decoded.id;
     next();
   } catch (error) {
     res.status(401).json({ message: 'Invalid token' });

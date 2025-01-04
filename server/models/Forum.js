@@ -12,6 +12,10 @@ const ForumSchema = new mongoose.Schema({
     user: {
         type: String,
         required: true
+    },
+    userName: {
+        type: String,
+        required: true
     }
 }, { timestamps: true });
 
