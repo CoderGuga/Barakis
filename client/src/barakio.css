@@ -191,26 +191,6 @@ h2 {
   word-wrap: break-word; /* Ensure long text breaks into the next line */
   overflow-wrap: break-word;
 }
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .feed-title {
-    font-size: 2rem;
-  }
-
-  .post-card {
-    padding: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .feed-title {
-    font-size: 1.8rem;
-  }
-
-  .posts-grid {
-    grid-template-columns: 1fr;
-  }
-}
 /* General Reset */
 * {
   box-sizing: border-box;
