@@ -82,6 +82,7 @@ h2 {
 .login-box
  {
   width: 360px;
+  max-width: 90%;
   padding: 16px;
   background-color: #161b22; /* Dark gray background */
   border: 1px solid #30363d; /* Slightly lighter border */
@@ -150,7 +151,7 @@ h2 {
   padding: 20px;
   width: 90vw;
   margin: 60px auto; /* Ensure top margin pushes content below header */
-  
+  max-width: 1200px;
   box-sizing: border-box;
   
 }
@@ -220,7 +221,8 @@ h2 {
 
 /* Main Container */
 .github-container {
-  width: 400px;
+  width: 500px;
+  max-width: 90%;
   background-color: #161b22; /* Slightly lighter than background */
   border: 1px solid #30363d;
   border-radius: 8px;
@@ -229,7 +231,8 @@ h2 {
   
 }
 .posts-container {
-  width: 78%;
+  width: 90%; /* Adjusted width for responsiveness */
+  max-width: 1400px; 
   margin: auto;
   background-color: #161b22; /* Slightly lighter than background */
   border: 1px solid #30363d;
@@ -379,4 +382,56 @@ h2 {
 .edit-button:hover {
   background-color: #218bff; /* Brighter blue on hover */
   border-color: #218bff;
+}
+/* Edit Form */
+.edit-form {
+  background-color: #161b22; /* Match container color */
+  padding: 20px;
+  margin: 20px auto;
+  width: 500px;
+  max-width: 90%;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(27, 31, 35, 0.1);
+}
+
+.edit-form h2 {
+  color: #f0f6fc;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.edit-form input,
+.edit-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #0d1117;
+  color: #f0f6fc;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.edit-form input:focus,
+.edit-form textarea:focus {
+  outline: none;
+  border-color: #58a6ff;
+}
+
+.edit-form button {
+  background-color: #238636;
+  color: #ffffff;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.2s;
+}
+
+.edit-form button:hover {
+  background-color: #2ea043;
 }
