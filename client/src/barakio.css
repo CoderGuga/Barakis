@@ -211,8 +211,8 @@ h2 {
   
 }
 .posts-container {
-  width: 90%; /* Adjusted width for responsiveness */
-  max-width: 1400px; 
+  width: 1600px; /* Adjusted width for responsiveness */
+  max-width: 90%; 
   margin: auto;
   background-color: #161b22; /* Slightly lighter than background */
   border: 1px solid #30363d;
