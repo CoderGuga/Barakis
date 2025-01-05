@@ -69,7 +69,7 @@ function Text() {
           Send
         </button>
         <button className="floating-button" onClick={navigateToTasks}>
-                <img src="home.png" alt="Add Task" className="floating-button-icon" />
+                <img src="close.png" alt="Add Task" className="floating-button-icon" />
             </button>
       </form>
     </div>

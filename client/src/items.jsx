@@ -1,5 +1,8 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+//
+import { useLocation } from 'react-router-dom';
+//
 import './barakio.css';
 
 const App = () => {
@@ -9,7 +12,21 @@ const App = () => {
     const [editDescription, setEditDescription] = useState("");
     const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
     const userId = sessionStorage.getItem("_id");
+    ////////
+    const location = useLocation(); // Hook to access the current route
 
+    useEffect(() => {
+        // Apply a specific class to <body> when this component is mounted
+        if (location.pathname === '/items') {
+            document.body.classList.add('custom-body-style'); // Add custom class
+        }
+
+        // Cleanup: Remove the class when the component is unmounted or route changes
+        return () => {
+            document.body.classList.remove('custom-body-style');
+        };
+    }, [location]);
+    ////////
     useEffect(() => {
         const token = sessionStorage.getItem("token");
         if (token) {
@@ -32,6 +49,7 @@ const App = () => {
             console.log('missing token');
         }
     }, [apiUrl]);
+
 
     const navigateToTasks = () => {
         window.location.href = '/tasks';
@@ -84,7 +102,7 @@ const App = () => {
     };
 
     return (
-        <div className="github-container">
+        <div className="posts-container">
             <h1 className="github-title">Items List</h1>
             <ul className="posts-grid">
                 {items.map((item) => (
