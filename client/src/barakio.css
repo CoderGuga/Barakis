@@ -7,7 +7,7 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
-  font-size: clamp(16px, 1vw, 18px);
+  font-size: clamp(16px, 1vw, 20px);
   background-color: #0d1117; /* GitHub dark background */
   color: #c9d1d9; /* Light gray text */
   overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -16,13 +16,13 @@ body {
 /* Header Section */
 .Header {
   width: 100%;
-  height: 60px;
+  height: 70px;
   background-color: #161b22; /* Darker header background */
   color: #f0f6fc; /* Light header text */
-  font-size: 1rem;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 30px;
   border-bottom: 1px solid #21262d; /* Subtle border */
   position: fixed;
   top: 0;
@@ -31,13 +31,13 @@ body {
 
 .Header h1 {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
 .Header img {
-  height: 32px;
-  margin-right: 10px;
+  height: 40px;
+  margin-right: 15px;
 }
 
 .buttons {
@@ -49,12 +49,12 @@ body {
 .buttonL {
   background-color: #238636; /* GitHub green button */
   color: #f0f6fc;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 500;
   border: 1px solid rgba(240, 246, 252, 0.1);
-  border-radius: 6px;
-  padding: 5px 12px;
-  margin-left: 8px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin-left: 10px;
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s;
 }
@@ -67,11 +67,11 @@ body {
 
 /* Page Titles */
 h2 {
-  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  font-size: clamp(2rem, 3vw, 3.5rem);
   font-weight: 600;
   color: #f0f6fc;
   text-align: center;
-  margin: 80px 0 20px;
+  margin: 100px 0 30px;
 }
 
 /* Container for Forms */
@@ -79,29 +79,29 @@ h2 {
 .forgotPA-box,
 .login-box {
   width: 95%;
-  max-width: 40rem;
-  padding: 1.5rem;
+  max-width: 50rem;
+  padding: 2rem;
   background-color: #161b22; /* Dark gray background */
   border: 1px solid #30363d; /* Slightly lighter border */
-  border-radius: 6px;
-  margin: 1rem auto;
+  border-radius: 10px;
+  margin: 2rem auto;
   text-align: left;
-  box-shadow: 0 1px 3px rgba(27, 31, 35, 0.1);
+  box-shadow: 0 2px 5px rgba(27, 31, 35, 0.2);
 }
 
 /* Input Styles */
 .input-box {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .input-box input {
   width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
+  padding: 1rem;
+  font-size: 1.1rem;
   background-color: #0d1117; /* Input background */
   color: #f0f6fc; /* Input text color */
   border: 1px solid #30363d;
-  border-radius: 6px;
+  border-radius: 8px;
   box-sizing: border-box;
   transition: border-color 0.2s, background-color 0.2s;
 }
@@ -115,13 +115,13 @@ h2 {
 /* Login Button */
 .login-btn {
   width: 100%;
-  padding: 0.75rem;
+  padding: 1rem;
   background-color: #238636; /* GitHub green */
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s;
 }
@@ -133,7 +133,7 @@ h2 {
 /* Forgot Password Link */
 #forgot-password {
   color: #58a6ff; /* GitHub link blue */
-  font-size: 0.875rem;
+  font-size: 1rem;
   text-decoration: none;
 }
 
@@ -143,10 +143,10 @@ h2 {
 
 /* Main Container for the Feed */
 .feed-container {
-  padding: 1.5rem;
+  padding: 2rem;
   width: 95%;
-  max-width: 90rem;
-  margin: 80px auto; /* Ensure top margin pushes content below header */
+  max-width: 120rem;
+  margin: 100px auto; /* Ensure top margin pushes content below header */
   box-sizing: border-box;
 }
 
@@ -155,31 +155,31 @@ h2 {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .post-card {
   background-color: #161b22; /* Slightly lighter than the background */
   border: 1px solid #30363d; /* Border color */
-  border-radius: 8px;
-  padding: 1.5rem;
+  border-radius: 12px;
+  padding: 2rem;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .post-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 .post-title {
-  font-size: 1.5rem;
-  margin: 0 0 10px;
+  font-size: 1.75rem;
+  margin: 0 0 12px;
   color: #c9d1d9;
   text-align: left;
 }
 
 .post-description {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   margin: 0;
   color: #8b949e;
   word-wrap: break-word; /* Ensure long text breaks into the next line */
@@ -196,35 +196,35 @@ h2 {
 /* Main Container */
 .github-container {
   width: 95%;
-  max-width: 40rem;
+  max-width: 60rem;
   background-color: #161b22; /* Slightly lighter than background */
   border: 1px solid #30363d;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .posts-container {
   width: 95%;
-  max-width: 90rem; 
+  max-width: 120rem; 
   margin: auto;
   background-color: #161b22; /* Slightly lighter than background */
   border: 1px solid #30363d;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .github-title {
   text-align: center;
   color: #f0f6fc; /* GitHub header color */
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 30px;
 }
 
 /* Input Groups */
 .github-input-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .github-label {
@@ -237,12 +237,12 @@ h2 {
 .github-input,
 .github-textarea {
   width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
+  padding: 1rem;
+  font-size: 1.1rem;
   background-color: #0d1117; /* Input background */
   color: #f0f6fc;
   border: 1px solid #30363d;
-  border-radius: 6px;
+  border-radius: 8px;
   transition: border-color 0.2s ease;
 }
 
@@ -255,18 +255,18 @@ h2 {
 /* Textarea Styling */
 .github-textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: 150px;
 }
 
 /* Button Styling */
 .github-button {
   width: 100%;
-  padding: 0.75rem;
+  padding: 1rem;
   background-color: #238636; /* GitHub green button */
   color: #ffffff;
   border: none;
-  border-radius: 6px;
-  font-size: 1rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -279,13 +279,13 @@ h2 {
 /* Floating Button */
 .floating-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
+  bottom: 30px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
   background-color: #238636; /* GitHub green */
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -293,13 +293,13 @@ h2 {
 }
 
 .floating-button:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
   background-color: #2ea043;
 }
 
 .floating-button-icon {
-  width: 50%;
-  height: 50%;
+  width: 60%;
+  height: 60%;
   object-fit: contain;
   filter: brightness(0) invert(1); /* Makes image white for dark background */
 }
@@ -310,7 +310,7 @@ h2 {
   align-items: center;
   justify-content: flex-start; /* Changed from center to flex-start */
   min-height: 100vh;
-  margin: 100px;
+  margin: 120px;
   font-family: "Segoe UI", Arial, sans-serif;
   font-size: 1rem;
   background-color: #0d1117; /* GitHub dark background */
@@ -322,12 +322,12 @@ h2 {
 .delete-button {
   background-color: #da3633; /* Red for delete */
   color: #f0f6fc; /* White text */
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 500;
   border: 1px solid rgba(240, 246, 252, 0.1); /* Subtle border */
-  border-radius: 6px;
-  padding: 5px 12px;
-  margin: 5px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin: 8px;
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s;
 }
@@ -341,12 +341,12 @@ h2 {
 .edit-button {
   background-color: #0969da; /* Blue for edit */
   color: #f0f6fc; /* White text */
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 500;
   border: 1px solid rgba(240, 246, 252, 0.1); /* Subtle border */
-  border-radius: 6px;
-  padding: 5px 12px;
-  margin: 5px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin: 8px;
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s;
 }
@@ -359,31 +359,31 @@ h2 {
 /* Edit Form */
 .edit-form {
   background-color: #161b22; /* Match container color */
-  padding: 1.5rem;
-  margin: 1.5rem auto;
+  padding: 2rem;
+  margin: 2rem auto;
   width: 95%;
-  max-width: 40rem;
+  max-width: 60rem;
   border: 1px solid #30363d;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(27, 31, 35, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(27, 31, 35, 0.3);
 }
 
 .edit-form h2 {
   color: #f0f6fc;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .edit-form input,
 .edit-form textarea {
   width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 1.5rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
   background-color: #0d1117;
   color: #f0f6fc;
   border: 1px solid #30363d;
-  border-radius: 6px;
-  font-size: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
   transition: border-color 0.2s ease;
 }
 
@@ -396,10 +396,10 @@ h2 {
 .edit-form button {
   background-color: #238636;
   color: #ffffff;
-  padding: 0.75rem;
-  font-size: 1rem;
+  padding: 1rem;
+  font-size: 1.2rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   margin-right: 0.5rem;
   transition: background-color 0.2s;
@@ -416,19 +416,19 @@ h2 {
   .feed-container,
   .github-container,
   .posts-container {
-    max-width: 120rem;
-    padding: 2rem;
+    max-width: 140rem;
+    padding: 3rem;
   }
 
   .edit-form {
-    max-width: 50rem;
+    max-width: 80rem;
   }
 
   .post-card {
-    padding: 2rem;
+    padding: 3rem;
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 }
