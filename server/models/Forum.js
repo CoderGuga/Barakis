@@ -1,15 +1,23 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose';
 
 const ForumSchema = new mongoose.Schema({
-    text:{
-        type:String,
-        required:true
-    }, 
-    status:{
-        type:Boolean,
-        required:true
+    title: { 
+        type: String, 
+        required: true
+    },
+    description: { 
+        type: String, 
+        required: false 
+    },
+    user: {
+        type: String,
+        required: true
+    },
+    userName: {
+        type: String,
+        required: true
     }
-}, { timestamps: true }
-)
+}, { timestamps: true });
 
-module.exports = mongoose.model('Forum', ForumSchema)
+const ForumModel = mongoose.model('Forum', ForumSchema);
+export default ForumModel;
